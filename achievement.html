@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements | Tanvir Ahmed Khan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root{--primary:#6c63ff;--secondary:#f50057;--dark:#0f0f1a;--darker:#080812;--card-bg:#1a1a2e;--text:#e0e0e0;--text-muted:#8892b0;--border:rgba(108,99,255,0.2);}
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Poppins',sans-serif;background:var(--dark);color:var(--text);overflow-x:hidden;}
+        ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--darker)}::-webkit-scrollbar-thumb{background:var(--primary);border-radius:10px}
+        .navbar{background:rgba(15,15,26,0.97)!important;backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 0;z-index:1000;}
+        .navbar-brand{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+        .nav-link{color:var(--text)!important;font-weight:500;font-size:0.82rem;text-transform:uppercase;padding:7px 11px!important;transition:color 0.3s;}
+        .nav-link:hover,.nav-link.active{color:var(--primary)!important;}
+        .navbar-toggler{border:1px solid var(--primary)!important;}
+        .navbar-toggler-icon{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(108,99,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")!important;}
+        .page-hero{padding:130px 0 60px;background:linear-gradient(135deg,var(--darker),rgba(245,0,87,0.05));border-bottom:1px solid var(--border);}
+        .page-hero-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;margin-bottom:12px;}
+        .page-hero-title span{background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+        .breadcrumb{background:none;padding:0;}
+        .breadcrumb-item a{color:var(--primary);text-decoration:none;font-size:0.85rem;}
+        .breadcrumb-item.active{color:var(--text-muted);font-size:0.85rem;}
+        .breadcrumb-item+.breadcrumb-item::before{color:var(--text-muted);}
+        main{padding:55px 0;}
+
+        /* STATS ROW */
+        .stat-mini{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:20px;text-align:center;transition:all 0.3s;}
+        .stat-mini:hover{border-color:var(--primary);transform:translateY(-4px);}
+        .stat-mini-num{font-size:1.8rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+        .stat-mini-label{font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;}
+
+        /* ACHIEVEMENT CARD */
+        .achievement-card{background:var(--card-bg);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all 0.4s;margin-bottom:30px;}
+        .achievement-card:hover{border-color:var(--primary);box-shadow:0 20px 60px rgba(108,99,255,0.15);}
+        .achievement-header{padding:25px 28px 20px;display:flex;align-items:flex-start;gap:20px;border-bottom:1px solid var(--border);}
+        .achievement-icon-wrap{width:65px;height:65px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;}
+        .achievement-title{font-size:1.15rem;font-weight:700;margin-bottom:5px;}
+        .achievement-subtitle{font-size:0.83rem;color:var(--primary);font-weight:600;margin-bottom:4px;}
+        .achievement-date{font-size:0.75rem;color:var(--text-muted);}
+        .achievement-body{padding:22px 28px;}
+        .achievement-desc{font-size:0.85rem;color:var(--text-muted);line-height:1.75;margin-bottom:18px;}
+        .img-placeholder{background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:10px;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-muted);gap:8px;}
+        .img-placeholder i{font-size:2.5rem;}
+        .img-placeholder span{font-size:0.72rem;}
+        .video-placeholder{background:rgba(0,0,0,0.3);border:1px solid var(--border);border-radius:12px;height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:0.3s;}
+        .video-placeholder:hover{border-color:var(--primary);}
+        .video-placeholder i{font-size:2.8rem;color:var(--primary);}
+        .video-placeholder span{font-size:0.8rem;color:var(--text-muted);}
+        .cert-preview{background:linear-gradient(135deg,rgba(247,151,30,0.1),rgba(255,210,0,0.1));border:2px dashed rgba(247,151,30,0.4);border-radius:12px;padding:20px;text-align:center;height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:0.3s;}
+        .cert-preview:hover{border-color:rgba(247,151,30,0.8);}
+        .cert-preview i{font-size:2.5rem;color:#f7971e;}
+        .cert-preview span{font-size:0.78rem;color:var(--text-muted);}
+        .detail-label{font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:5px;}
+        .detail-val{font-size:0.87rem;font-weight:600;}
+        .badge-pill{display:inline-block;background:rgba(108,99,255,0.15);border:1px solid rgba(108,99,255,0.3);color:var(--primary);padding:4px 13px;border-radius:50px;font-size:0.73rem;font-weight:600;margin:2px;}
+        .badge-pill.gold{background:rgba(255,210,0,0.15);border-color:rgba(255,210,0,0.3);color:#ffd700;}
+        .badge-pill.green{background:rgba(56,239,125,0.12);border-color:rgba(56,239,125,0.3);color:#38ef7d;}
+
+        footer{background:var(--darker);border-top:1px solid var(--border);padding:25px 0;text-align:center;}
+        .footer-social{display:flex;justify-content:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+        .footer-social-icon{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:0.88rem;transition:0.3s;text-decoration:none;}
+        .footer-social-icon:hover{background:var(--primary);border-color:var(--primary);color:white;transform:translateY(-3px);}
+        .footer-text{color:var(--text-muted);font-size:0.8rem;}
+        .footer-text span{color:var(--secondary);}
+        .animate-on-scroll{opacity:0;transform:translateY(25px);transition:all 0.6s ease;}
+        .animate-on-scroll.animated{opacity:1;transform:translateY(0);}
+
+        @media(max-width:768px){.achievement-header{flex-direction:column;gap:14px;}.achievement-body{padding:18px 20px;}}
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">TAK</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                <li class="nav-item"><a class="nav-link active" href="achievement.html">Achievement</a></li>
+                <li class="nav-item"><a class="nav-link" href="certification.html">Certification</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="cocurriculum.html">Activities</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="page-hero">
+    <div class="container">
+        <nav aria-label="breadcrumb"><ol class="breadcrumb mb-3"><li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home me-1"></i>Home</a></li><li class="breadcrumb-item active">Achievements</li></ol></nav>
+        <h1 class="page-hero-title">My <span>Achievements</span></h1>
+        <p style="color:var(--text-muted);font-size:0.9rem;max-width:550px">Awards, honors, and milestones that mark my journey of excellence in technology, academics, and innovation.</p>
+    </div>
+</div>
+
+<main>
+    <div class="container">
+        <!-- Stats -->
+        <div class="row g-3 mb-5 animate-on-scroll">
+            <div class="col-6 col-md-3"><div class="stat-mini"><div class="stat-mini-num">12+</div><div class="stat-mini-label">Total Awards</div></div></div>
+            <div class="col-6 col-md-3"><div class="stat-mini"><div class="stat-mini-num">5</div><div class="stat-mini-label">National Level</div></div></div>
+            <div class="col-6 col-md-3"><div class="stat-mini"><div class="stat-mini-num">3</div><div class="stat-mini-label">International</div></div></div>
+            <div class="col-6 col-md-3"><div class="stat-mini"><div class="stat-mini-num">4</div><div class="stat-mini-label">Academic Honors</div></div></div>
+        </div>
+
+        <!-- Achievement 1 -->
+        <div class="achievement-card animate-on-scroll">
+            <div class="achievement-header">
+                <div class="achievement-icon-wrap" style="background:linear-gradient(135deg,#f7971e,#ffd200)">🏆</div>
+                <div style="flex:1">
+                    <h3 class="achievement-title">1st Place — ICPC Regional Programming Contest</h3>
+                    <div class="achievement-subtitle">National Champion | International Collegiate Programming Contest</div>
+                    <div class="achievement-date"><i class="fas fa-calendar me-1"></i>November 2023 &nbsp;|&nbsp; <i class="fas fa-map-marker-alt me-1"></i>Dhaka, Bangladesh</div>
+                    <div class="mt-2">
+                        <span class="badge-pill gold">🥇 Gold Medal</span>
+                        <span class="badge-pill">National Level</span>
+                        <span class="badge-pill green">Competitive Programming</span>
+                    </div>
+                </div>
+            </div>
+            <div class="achievement-body">
+                <p class="achievement-desc">Achieved 1st place in the ICPC Regional Programming Contest 2023, competing against 150+ teams from universities across Bangladesh. The team solved 9 out of 11 complex algorithmic problems within the 5-hour time limit, demonstrating exceptional problem-solving skills, data structures knowledge, and teamwork. This victory qualified our team to compete at the ICPC Asia Regional Contest.</p>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-3 col-6"><div class="detail-label">Position</div><div class="detail-val">🥇 1st Place</div></div>
+                    <div class="col-md-3 col-6"><div class="detail-label">Teams Competed</div><div class="detail-val">150+ Teams</div></div>
+                    <div class="col-md-3 col-6"><div class="detail-label">Problems Solved</div><div class="detail-val">9 / 11</div></div>
+                    <div class="col-md-3 col-6"><div class="detail-label">Prize</div><div class="detail-val">৳ 1,50,000</div></div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="detail-label mb-2"><i class="fas fa-images me-1"></i>Event Photos</div>
+                        <div class="img-placeholder" style="background:linear-gradient(135deg,rgba(247,151,30,0.15),rgba(255,210,0,0.1))"><i class="fas fa-trophy"></i><span>Award Ceremony Photo</span></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="detail-label mb-2"><i class="fas fa-certificate me-1"></i>Certificate</div>
+                        <div class="cert-preview"><i class="fas fa-file-certificate"></i><span>Click to view certificate</span><span style="font-size:0.65rem">ICPC Certificate 2023</span></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="detail-label mb-2"><i class="fas fa-video me-1"></i>Highlight Video</div>
+                        <div class="video-placeholder" style="height:150px"><i class="fas fa-play-circle"></i><span>Competition Highlights</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievement 2 -->
+        <div class="achievement-card animate-on-scroll">
+            <div class="achievement-header">
+                <div class="achievement-icon-wrap" style="background:linear-gradient(135deg,#6c63ff,#f50057)">🎖️</div>
+                <div style="flex:1">
+                    <h3 class="achievement-title">Best Innovation Award — TechFest BD Hackathon</h3>
+                    <div class="achievement-subtitle">Winner | 48-Hour National Hackathon Competition</div>
+                    <div class="achievement-date"><i class="fas fa-calendar me-1"></i>March 2023 &nbsp;|&nbsp; <i class="fas fa-map-marker-alt me-1"></i>BUET, Dhaka</div>
+                    <div class="mt-2"><span class="badge-pill" style="background:rgba(108,99,255,0.2);border-color:rgba(108,99,255,0.4)">🏆 Winner</span><span class="badge-pill">AI/ML</span><span class="badge-pill">Healthcare Tech</span></div>
+                </div>
+            </div>
+            <div class="achievement-body">
+                <p class="achievement-desc">Won the Best Innovation Award at TechFest BD 2023 Hackathon for developing an AI-powered health monitoring system that uses machine learning algorithms to predict potential health issues from wearable device data. The project impressed judges with its innovative approach to preventive healthcare and real-world applicability.</p>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-3 col-6"><div class="detail-label">Award</div><div class="detail-val">Best Innovation</div></div>
+                    <div class="col-md-3 col-6"><div class="detail-label">Duration</div><div class="detail-val">48 Hours</div></div>
+                    <div class="col-md-3 col-6"><div class="detail-label">Team Size</div><div class="detail-val">4 Members</div></div>
+                    <div class="col-md-3 col-6"><div class="detail-label">Prize</div><div class="detail-val">৳ 75,000</div></div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-4"><div class="detail-label mb-2"><i class="fas fa-images me-1"></i>Photos</div><div class="img-placeholder" style="background:linear-gradient(135deg,rgba(108,99,255,0.15),rgba(245,0,87,0.1))"><i class="fas fa-medal"></i><span>Hackathon Photos</span></div></div>
+                    <div class="col-md-4"><div class="detail-label mb-2"><i class="fas fa-certificate me-1"></i>Certificate</div><div class="cert-preview"><i class="fas fa-file-certificate"></i><span>View Certificate</span></div></div>
+                    <div class="col-md-4"><div class="detail-label mb-2"><i class="fas fa-video me-1"></i>Project Demo</div><div class="video-placeholder" style="height:150px"><i class="fas fa-play-circle"></i><span>Project Presentation</span></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievement 3 -->
+        <div class="achievement-card animate-on-scroll">
+            <div class="achievement-header">
+                <div class="achievement-icon-wrap" style="background:linear-gradient(135deg,#11998e,#38ef7d)">⭐</div>
+                <div style="flex:1">
+                    <h3 class="achievement-title">Dean's List — Academic Excellence Award</h3>
+                    <div class="achievement-subtitle">University of Dhaka | 2018, 2019, 2020</div>
+                    <div class="achievement-date"><i class="fas fa-calendar me-1"></i>2018-2020 &nbsp;|&nbsp; <i class="fas fa-map-marker-alt me-1"></i>University of Dhaka</div>
+                    <div class="mt-2"><span class="badge-pill green">Academic</span><span class="badge-pill">3 Consecutive Years</span></div>
+                </div>
+            </div>
+            <div class="achievement-body">
+                <p class="achievement-desc">Consecutively placed on the Dean's List for three academic years (2018, 2019, 2020) for maintaining an exceptional CGPA above 3.8 out of 4.0. This honor recognizes outstanding academic performance and dedication to excellence in the Computer Science and Engineering department at the University of Dhaka.</p>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-3 col-6"><div class="detail-label">CGPA</div><div class="detail-val">3.85 / 4.00</div></div>
+                    <div class="col-md-3 col-6"><div class="detail-label">Consecutive Years</div><div class="detail-val">3 Years</div></div>
+                    <div class="col-md-3 col-6"><div class="detail-label">Department</div><div class="detail-val">CSE</div></div>
+                    <div class="col-md-3 col-6"><div class="detail-label">Merit Position</div><div class="detail-val">Top 5%</div></div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-4"><div class="detail-label mb-2"><i class="fas fa-images me-1"></i>Award Ceremony</div><div class="img-placeholder" style="background:linear-gradient(135deg,rgba(17,153,142,0.15),rgba(56,239,125,0.1))"><i class="fas fa-graduation-cap"></i><span>Ceremony Photos</span></div></div>
+                    <div class="col-md-4"><div class="detail-label mb-2"><i class="fas fa-certificate me-1"></i>Certificates</div><div class="cert-preview"><i class="fas fa-file-certificate"></i><span>View 3 Certificates</span></div></div>
+                    <div class="col-md-4"><div class="detail-label mb-2"><i class="fas fa-chart-line me-1"></i>Academic Record</div><div class="img-placeholder" style="background:linear-gradient(135deg,rgba(17,153,142,0.1),rgba(108,99,255,0.1))"><i class="fas fa-chart-bar"></i><span>Grade Transcript</span></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievement 4 -->
+        <div class="achievement-card animate-on-scroll">
+            <div class="achievement-header">
+                <div class="achievement-icon-wrap" style="background:linear-gradient(135deg,#f093fb,#f5576c)">🌍</div>
+                <div style="flex:1">
+                    <h3 class="achievement-title">Google Developer Student Club Lead</h3>
+                    <div class="achievement-subtitle">GDSC Lead | Google Developer Student Club, University of Dhaka</div>
+                    <div class="achievement-date"><i class="fas fa-calendar me-1"></i>2021-2022 &nbsp;|&nbsp; <i class="fas fa-globe me-1"></i>International Program</div>
+                    <div class="mt-2"><span class="badge-pill" style="background:rgba(240,147,251,0.15);border-color:rgba(240,147,251,0.3);color:#f093fb">Leadership</span><span class="badge-pill">Google</span><span class="badge-pill">Community</span></div>
+                </div>
+            </div>
+            <div class="achievement-body">
+                <p class="achievement-desc">Selected as Google Developer Student Club (GDSC) Lead for the University of Dhaka chapter, one of only 3 selected from Bangladesh. Led a community of 500+ students, organized 20+ technical workshops, hackathons, and study jams. Successfully grew the chapter membership by 300% during the tenure.</p>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-3 col-6"><div class="detail-label">Role</div><div class="detail-val">GDSC Lead</div></div>
+                    <div class="col-md-3 col-6"><div class="detail-label">Community</div><div class="detail-val">500+ Members</div></div>
+                    <div class="col-md-3 col-6"><div class="detail-label">Events Organized</div><div class="detail-val">20+ Events</div></div>
+                    <div class="col-md-3 col-6"><div class="detail-label">Duration</div><div class="detail-val">1 Year</div></div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-6"><div class="detail-label mb-2"><i class="fas fa-images me-1"></i>Event Gallery</div><div class="row g-2"><div class="col-6"><div class="img-placeholder" style="height:110px;background:linear-gradient(135deg,rgba(240,147,251,0.15),rgba(245,87,108,0.1))"><i class="fas fa-users"></i><span style="font-size:0.68rem">Workshop</span></div></div><div class="col-6"><div class="img-placeholder" style="height:110px;background:linear-gradient(135deg,rgba(108,99,255,0.15),rgba(245,0,87,0.1))"><i class="fas fa-laptop"></i><span style="font-size:0.68rem">Hackathon</span></div></div></div></div>
+                    <div class="col-md-3"><div class="detail-label mb-2"><i class="fas fa-certificate me-1"></i>Certificate</div><div class="cert-preview" style="height:110px"><i class="fas fa-file-certificate" style="font-size:2rem"></i><span>GDSC Certificate</span></div></div>
+                    <div class="col-md-3"><div class="detail-label mb-2"><i class="fas fa-video me-1"></i>Video</div><div class="video-placeholder" style="height:110px"><i class="fas fa-play-circle" style="font-size:2rem"></i><span style="font-size:0.72rem">Highlights</span></div></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-social">
+            <a href="#" class="footer-social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fab fa-researchgate"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fab fa-telegram"></i></a>
+            <a href="#" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="footer-text">© 2024 <span>Tanvir Ahmed Khan</span>. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('animated'),100*i);});},{threshold:0.05});
+document.querySelectorAll('.animate-on-scroll').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
