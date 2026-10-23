@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!--
+  ════════════════════════════════════════════════════════════════
+   পলিসি ব্রেকফাস্ট — আমন্ত্রণপত্র (ওয়েবপেজ)
+
+   কীভাবে ব্যবহার করবেন:
+   ১. এই ফাইলে Ctrl+F দিয়ে  [ইভেন্ট]  খুঁজুন → ইভেন্টের তথ্য একবার বদলান
+      (তারিখ, সময়, ভেন্যু, বিষয়, সূচি — সব অতিথির জন্য একই)।
+   ২. ফাইলটা প্রতিজন অতিথির জন্য আলাদা নামে কপি করুন,
+      যেমন  farhana-x7k2.html  (শেষে ৪টা এলোমেলো অক্ষর দিন,
+      যাতে কেউ অন্যের লিংক আন্দাজ করতে না পারে)।
+   ৩. প্রতিটা কপিতে Ctrl+F দিয়ে  [অতিথি]  খুঁজুন → শুধু ওই অংশ বদলান।
+   ৪. ব্রাউজারে খুলে একবার দেখে নিন, তারপর ওয়েবসাইটে আপলোড করুন।
+  ════════════════════════════════════════════════════════════════
+-->
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- সার্চ ইঞ্জিনে যেন এই পেজ না আসে -->
+<meta name="robots" content="noindex, nofollow">
+<title>আমন্ত্রণ · পলিসি ব্রেকফাস্ট · বাংলাদেশ ফরওয়ার্ড</title>
+<!-- WhatsApp / Messenger-এ লিংক শেয়ার করলে যে প্রিভিউ দেখাবে -->
+<meta property="og:title" content="পলিসি ব্রেকফাস্টে আমন্ত্রণ — বাংলাদেশ ফরওয়ার্ড">
+<meta property="og:description" content="সকালের নাস্তার টেবিলে একটি তথ্যনির্ভর নীতি-সংলাপ">
+<meta property="og:image" content="https://bangladeshforward.org/images/bf-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Noto+Serif+Bengali:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  /* রং বদলাতে শুধু এখানে বদলান */
+  :root{
+    --green:#0F4C3A;      /* প্রধান রং */
+    --green-dark:#0B3A2C;
+    --gold:#D29A2E;       /* অ্যাকসেন্ট */
+    --gold-soft:#E3B356;
+    --cream:#F4F1EA;      /* বাইরের ব্যাকগ্রাউন্ড */
+    --tint:#EEF3EF;       /* বিবরণ কার্ড */
+    --note:#F8F3E6;       /* ব্যক্তিগত লাইনের বক্স */
+    --ink:#1F2A24;
+    --muted:#5B6660;
+    --faint:#7A847E;
+    --line:#ECE6DA;
+    --sans:'Hind Siliguri','Noto Sans Bengali','Nirmala UI','Kohinoor Bangla',system-ui,sans-serif;
+    --serif:'Noto Serif Bengali','Hind Siliguri','Noto Sans Bengali',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:var(--sans);font-size:17px;line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--green)}
+  .card{
+    max-width:640px;margin:40px auto 0;background:#fff;border-radius:16px;overflow:hidden;
+    box-shadow:0 1px 2px rgba(31,42,36,.05),0 18px 48px -24px rgba(15,76,58,.28);
+  }
+  .pad{padding-left:44px;padding-right:44px}
+
+  /* ১. হেডার */
+  .top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;padding-bottom:22px}
+  .top img{display:block;width:140px;height:auto}
+  .top span{font-size:14px;color:var(--muted)}
+
+  /* ২. হিরো */
+  .hero{background:var(--green);color:#fff;padding-top:48px;padding-bottom:44px;border-bottom:4px solid var(--gold)}
+  .eyebrow{margin:0 0 16px;font-family:Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:2.5px;color:var(--gold-soft)}
+  .hero h1{margin:0;font-family:var(--serif);font-size:32px;line-height:1.5;font-weight:700}
+  .hero .sub{margin:14px 0 0;color:#CFE0D8;font-size:16.5px;line-height:1.7}
+  .when{margin:28px 0 0;padding:2px 0 2px 16px;border-left:3px solid var(--gold-soft);font-size:15.5px;line-height:1.65}
+  .when strong{font-weight:600}
+  .when span{display:block;color:#CFE0D8}
+
+  /* ৩. চিঠি */
+  .letter{padding-top:40px}
+  .salute{margin:0;font-size:18px}
+  .role{margin:2px 0 0;font-size:14px;color:var(--faint)}
+  .letter p.body{margin:22px 0 0}
+  .personal{margin:22px 0 0;padding:14px 18px;background:var(--note);border-left:3px solid var(--gold);font-size:16px;line-height:1.7;color:#3D3A2E}
+
+  /* ৪. বিবরণ */
+  .details{margin-top:32px}
+  .details .box{background:var(--tint);border-radius:12px;padding:22px 24px 10px}
+  h2{margin:0 0 8px;font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.5}
+  .details h2{color:var(--green)}
+  dl{margin:0;display:grid;grid-template-columns:84px 1fr}
+  dt,dd{margin:0;padding:10px 0;border-top:1px solid #D9E3DC;font-size:15.5px;line-height:1.6}
+  dt{color:var(--muted);font-size:14.5px}
+  dl > :nth-child(1),dl > :nth-child(2){border-top:0}
+  dd .addr{display:block;color:var(--muted)}
+  dd a{font-weight:600;text-decoration:none}
+
+  /* ৫. সূচি */
+  .agenda{margin-top:36px}
+  .agenda ol{list-style:none;margin:0;padding:0}
+  .agenda li{display:grid;grid-template-columns:72px 1fr;padding:11px 0;border-top:1px solid var(--line);font-size:15.5px;line-height:1.6}
+  .agenda time{font-weight:600;color:var(--green)}
+  .agenda small{display:block;font-size:13.5px;color:var(--faint)}
+
+  /* ৬. RSVP */
+  .rsvp{margin-top:36px}
+  .rsvp p{margin:0 0 18px}
+  .btn{display:inline-block;padding:14px 32px;border-radius:999px;background:var(--green);color:#fff;font-size:16.5px;font-weight:600;line-height:1.4;text-decoration:none;transition:background .15s}
+  .btn:hover{background:var(--green-dark)}
+  .rsvp .alt{margin:16px 0 0;font-size:14.5px;line-height:1.7;color:var(--muted)}
+  .rsvp .alt a{font-weight:600;white-space:nowrap}
+
+  /* ৭. স্বাক্ষর */
+  .sign{padding-top:32px;padding-bottom:36px}
+  .sign p{margin:0}
+  .sign .who{margin-top:14px;font-size:15.5px;line-height:1.65;color:var(--muted)}
+  .sign .who strong{color:var(--ink);font-weight:600}
+
+  /* ৮. সহায়তা */
+  .help{background:#F7F5F0;border-top:1px solid var(--line);text-align:center;padding-top:26px;padding-bottom:28px}
+  .help h2{font-size:16.5px;margin:0}
+  .help p{margin:6px 0 0;font-size:14.5px;color:var(--muted)}
+
+  /* ৯. ফুটার */
+  footer{max-width:640px;margin:0 auto;padding:28px 24px 48px;text-align:center;font-size:13.5px;line-height:1.7;color:var(--muted)}
+  footer .org{font-family:var(--serif);font-weight:600;font-size:15.5px;color:var(--green)}
+  footer nav{margin-top:12px}
+  footer nav a{margin:0 8px}
+  footer .fine{margin-top:12px;font-size:12.5px;color:#8A928D}
+
+  @media (max-width:680px){
+    .card{margin:0;border-radius:0;box-shadow:none}
+    .pad{padding-left:22px;padding-right:22px}
+    .hero h1{font-size:25px}
+    dl{grid-template-columns:66px 1fr}
+    .agenda li{grid-template-columns:62px 1fr}
+  }
+  @media print{
+    body{background:#fff}
+    .card{margin:0 auto;box-shadow:none}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<main class="card">
+
+  <!-- ১. হেডার -->
+  <header class="top pad">
+    <a href="https://bangladeshforward.org"><img src="https://bangladeshforward.org/images/bf-logo.png" alt="বাংলাদেশ ফরওয়ার্ড"></a>
+    <span>আমন্ত্রণপত্র</span>
+  </header>
+
+  <!-- ২. হিরো — ✏️ [ইভেন্ট] বিষয়, উপশিরোনাম, তারিখ, সময়, ভেন্যু -->
+  <section class="hero pad">
+    <p class="eyebrow">POLICY BREAKFAST</p>
+    <h1>বাজেট বরাদ্দে জবাবদিহিতা: নাগরিক নজরদারি কীভাবে বাড়ানো যায়</h1>
+    <p class="sub">নীতিনির্ধারক, অর্থনীতিবিদ ও নাগরিক সমাজের প্রতিনিধিদের নিয়ে একটি সকালের সংলাপ</p>
+    <p class="when"><strong>শনিবার, ১৪ নভেম্বর ২০২৬</strong><span>সকাল ৭:৪৫ – ১০:৩০ · [ভেন্যুর নাম]</span></p>
+  </section>
+
+  <!-- ৩. চিঠি -->
+  <section class="letter pad">
+
+    <!-- ✏️ [অতিথি] সম্ভাষণ, নাম, পদবি ও প্রতিষ্ঠান -->
+    <p class="salute">শ্রদ্ধেয় তানভীর আহমেদ খান তীব্র,</p>
+    <p class="role">অধ্যাপক, অর্থনীতি বিভাগ, নমুনা বিশ্ববিদ্যালয়</p>
+    <!-- ✏️ [অতিথি] অংশ শেষ -->
+
+    <p class="body">বাংলাদেশ ফরওয়ার্ডের পক্ষ থেকে আন্তরিক শুভেচ্ছা। আমাদের আয়োজন <strong>পলিসি ব্রেকফাস্ট</strong>-এ আপনাকে সাদরে আমন্ত্রণ জানাচ্ছি। সকালের নাস্তার টেবিলে নীতিনির্ধারক, গবেষক, পেশাজীবী ও নাগরিক সমাজের প্রতিনিধিরা একটি জাতীয় বিষয়ে খোলামেলা ও তথ্যনির্ভর আলোচনায় অংশ নেবেন।</p>
+
+    <!-- ✏️ [অতিথি] এই অতিথির জন্য ব্যক্তিগত এক লাইন। না লাগলে নিচের পুরো <p class="personal">…</p> লাইনটা মুছে দিন -->
+    <p class="personal">সরকারি ব্যয় ব্যবস্থাপনা নিয়ে আপনার গবেষণা এবারের আলোচনার জন্য বিশেষভাবে প্রাসঙ্গিক।</p>
+    <!-- ✏️ [অতিথি] অংশ শেষ -->
+
+    <p class="body">আপনার অভিজ্ঞতা ও মতামত এই আলোচনাকে সমৃদ্ধ করবে বলে আমরা বিশ্বাস করি।</p>
+  </section>
+
+  <!-- ৪. বিবরণ — ✏️ [ইভেন্ট] -->
+  <section class="details pad">
+    <div class="box">
+      <h2>অনুষ্ঠানের বিবরণ</h2>
+      <dl>
+        <dt>তারিখ</dt>
+        <dd><strong>শনিবার, ১৪ নভেম্বর ২০২৬</strong></dd>
+        <dt>সময়</dt>
+        <dd>সকাল ৭:৪৫ – ১০:৩০</dd>
+        <dt>স্থান</dt>
+        <dd>[ভেন্যুর নাম]<span class="addr">[পূর্ণ ঠিকানা], ঢাকা</span>
+          <!-- Google Maps লিংক বসান; না থাকলে নিচের লাইনটা মুছে দিন -->
+          <a href="https://maps.google.com/?q=Dhaka" target="_blank" rel="noopener">মানচিত্রে দেখুন →</a>
+        </dd>
+        <dt>ধরন</dt>
+        <dd>আমন্ত্রিত অতিথিদের নিয়ে গোলটেবিল আলোচনা · আসন সংখ্যা সীমিত</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ৫. অনুষ্ঠানসূচি — ✏️ [ইভেন্ট] -->
+  <section class="agenda pad">
+    <h2>অনুষ্ঠানসূচি</h2>
+    <ol>
+      <li><time>৭:৪৫</time><span>নিবন্ধন ও সকালের নাস্তা</span></li>
+      <li><time>৮:১৫</time><span>স্বাগত বক্তব্য<small>বাংলাদেশ ফরওয়ার্ড</small></span></li>
+      <li><time>৮:২৫</time><span>মূল উপস্থাপনা<small>আলোচ্য বিষয়ের প্রেক্ষাপট ও তথ্য</small></span></li>
+      <li><time>৮:৫০</time><span>উন্মুক্ত আলোচনা<small>সঞ্চালকের পরিচালনায়</small></span></li>
+      <li><time>১০:১৫</time><span>সারসংক্ষেপ ও সমাপনী</span></li>
+    </ol>
+  </section>
+
+  <!-- ৬. উপস্থিতি নিশ্চিত — ✏️ [ইভেন্ট]
+       বাটনটা অতিথির মেইল অ্যাপে একটা উত্তর-মেইল খুলে দেয়।
+       events@bangladeshforward.org-এর জায়গায় আপনার আসল মেইলবক্সের ঠিকানা দিন।
+       ক্যালেন্ডার লিংকে dates= অংশে ঢাকার সময় লিখুন: বছরমাসদিনTঘণ্টামিনিটসেকেন্ড/শেষের সময় -->
+  <section class="rsvp pad">
+    <p>অনুগ্রহ করে <strong>১০ নভেম্বর (মঙ্গলবার)</strong>-এর মধ্যে আপনার উপস্থিতি নিশ্চিত করুন।</p>
+    <a class="btn" href="mailto:contact@tanvirahmed.top?subject=পলিসি ব্রেকফাস্ট — উপস্থিতি নিশ্চিত&amp;body=আমি ১৪ নভেম্বরের পলিসি ব্রেকফাস্টে উপস্থিত থাকব।">উপস্থিতি নিশ্চিত করুন</a>
+    <p class="alt">
+      অথবা আমন্ত্রণ ইমেইলের উত্তর দিন কিংবা ফোন করুন <a href="tel:+8801712995042">+880 1712-995042</a><br>
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=পলিসি ব্রেকফাস্ট — বাংলাদেশ ফরওয়ার্ড&amp;dates=20261114T074500/20261114T103000&amp;ctz=Asia/Dhaka&amp;location=[ভেন্যুর নাম], ঢাকা" target="_blank" rel="noopener">Google ক্যালেন্ডারে যোগ করুন</a>
+    </p>
+  </section>
+
+  <!-- ৭. স্বাক্ষর — ✏️ [ইভেন্ট] -->
+  <section class="sign pad">
+    <p>আপনার উপস্থিতির প্রত্যাশায়,</p>
+    <p class="who"><strong>তানভীর আহমেদ</strong><br>আয়োজক, পলিসি ব্রেকফাস্ট<br>বাংলাদেশ ফরওয়ার্ড<br>+880 1712-995042</p>
+  </section>
+
+  <!-- ৮. সহায়তা -->
+  <section class="help pad">
+    <h2>কোনো প্রশ্ন বা বিশেষ প্রয়োজন?</h2>
+    <p>খাদ্যাভ্যাস, যাতায়াত বা অন্য যেকোনো বিষয়ে জানাতে আমন্ত্রণ ইমেইলের উত্তর দিন।</p>
+  </section>
+
+</main>
+
+<!-- ৯. ফুটার -->
+<footer>
+  <div class="org">বাংলাদেশ ফরওয়ার্ড</div>
+  <div>জ্ঞান দিয়ে গড়ি, একসাথে এগিয়ে যাই।</div>
+  <nav>
+    <a href="https://bangladeshforward.org">ওয়েবসাইট</a> ·
+    <a href="https://www.facebook.com/share/1JYsGTsfht/">ফেসবুক</a> ·
+    <a href="https://bangladeshforward.org/contact">যোগাযোগ</a>
+  </nav>
+  <div class="fine">ঢাকা, বাংলাদেশ · info@bangladeshforward.org<br>আসন সীমিত হওয়ায় আমন্ত্রণটি হস্তান্তরযোগ্য নয়।</div>
+</footer>
+
+</body>
+</html>
